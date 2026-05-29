@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Simple MIKS Website</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #111827);
+            min-height: 100vh;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .background-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: #22c55e;
+            filter: blur(200px);
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .card {
+            position: relative;
+            z-index: 1;
+
+            width: 450px;
+            padding: 35px;
+
+            background: rgba(31, 41, 55, 0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+
+            backdrop-filter: blur(10px);
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 0 30px rgba(0,0,0,0.4),
+                0 0 60px rgba(34,197,94,0.15);
+
+            transition: 0.3s;
+
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: auto;
+            margin-bottom: 20px;
+
+            border-radius: 50%;
+
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 32px;
+            font-weight: bold;
+
+            box-shadow: 0 0 20px rgba(34,197,94,0.5);
+        }
+
+        h1 {
+            color: #22c55e;
+            margin-bottom: 12px;
+            font-size: 34px;
+        }
+
+        p {
+            color: #cbd5e1;
+            margin-bottom: 18px;
+            line-height: 1.6;
+        }
+
+        .status {
+            background: #111827;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+            margin-top: 20px;
+        }
+
+        .status.connected {
+            border: 1px solid rgba(34,197,94,0.4);
+        }
+
+        .status.failed {
+            border: 1px solid rgba(239,68,68,0.4);
+        }
+
+        .status h2 {
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        .connected h2 {
+            color: #22c55e;
+        }
+
+        .failed h2 {
+            color: #ef4444;
+        }
+
+        .status span {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        .footer {
+            margin-top: 20px;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        .pulse {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 8px;
+
+            animation: pulse 1.5s infinite;
+        }
+
+        .connected .pulse {
+            background: #22c55e;
+        }
+
+        .failed .pulse {
+            background: #ef4444;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.5);
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .db-info {
+            margin-top: 15px;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="background-glow"></div>
+
+<div class="card">
+
+    <div class="logo">
+        🛡
+    </div>
+
+    <h1>MIKS Simple Website</h1>
+
+    <p>
+        Monitor keamanan sistem secara realtime dengan tampilan modern dan sederhana.
+    </p>
+
+    {% if db_status == "connected" %}
+
+    <div class="status connected">
+
+        <h2>
+            <span class="pulse"></span>
+            DATABASE CONNECTED
+        </h2>
+
+        <span>Connection Success</span>
+
+        <div class="db-info">
+            Server Time: {{ time }}
+        </div>
+
+    </div>
+
+    {% else %}
+
+    <div class="status failed">
+
+        <h2>
+            <span class="pulse"></span>
+            DATABASE FAILED
+        </h2>
+
+        <span>Connection Error</span>
+
+        <div class="db-info">
+            {{ error }}
+        </div>
+
+    </div>
+
+    {% endif %}
+
+    <div class="footer">
+        By nrp 25, 35, 53, 107 Kelompok MIKS
+    </div>
+
+</div>
+
+</body>
+</html>
