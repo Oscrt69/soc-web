@@ -78,13 +78,21 @@ Infrastruktur ini di-*deploy* di atas lingkungan Microsoft Azure Virtual Machine
 
 Sistem bekerja secara linear dan otomatis dalam hitungan milidetik (*Milliseconds*):
 1. **[Attack Phase]** Penyerang (`Attacker IP: 182.8.99.x`) membanjiri Target-Web dengan *traffic* buatan (DDoS).
+<img width="552" height="586" alt="Screenshot 2026-06-01 201959" src="https://github.com/user-attachments/assets/215d9605-441c-4c62-98cf-468309bec9a0" />
+
 2. **[Ingestion Phase]** Nginx mencatat aktivitas tersebut ke dalam `access.log`. *Wazuh Agent* secara *real-time* meneruskan log ini ke Manager.
+<img width="1561" height="443" alt="Screenshot 2026-06-01 202718" src="https://github.com/user-attachments/assets/b20aabc6-3e4b-421c-b579-f42185545d0e" />
+
 3. **[Correlation Phase]** Otak Wazuh Manager membandingkan log tersebut dengan *Custom Rules*. Rule `100113` terpicu akibat pelanggaran *threshold* frekuensi serangan.
 4. **[Action Phase - Forking]** Manager memicu dua tindakan serentak:
    * **Mitigasi:** Mengirim *command* `firewall-drop` kembali ke Agent, yang langsung memutus akses IP penyerang di *Firewall* lokal.
+   <img width="589" height="117" alt="Screenshot 2026-06-01 202748" src="https://github.com/user-attachments/assets/511e7d62-85a6-47c9-8ff8-157f486160c3" />
+   
    * **Integrasi:** Memanggil *script* `custom-shuffle` untuk mengirimkan ringkasan insiden ke URL Webhook Shuffle.
+   <img width="488" height="868" alt="Screenshot 2026-06-01 202523" src="https://github.com/user-attachments/assets/97608599-e303-4f7a-9fe1-decd61d15275" />
+   
 5. **[Orchestration Phase]** Shuffle memproses *payload* JSON, merakit struktur pesan peringatan, dan membunyikan alarm di *channel* Discord tim SOC.
-
+<img width="1397" height="230" alt="Screenshot 2026-06-01 202139" src="https://github.com/user-attachments/assets/8a7542da-102c-442f-af6a-9e574e25a42b" />
 ---
 
 ## Tech Stack & Requirements
